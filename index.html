@@ -4,9 +4,1633 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Poder Oculto da Manipulação</title>
-    <!-- O restante do conteúdo HTML foi omitido para brevidade, pois será igual ao fornecido pelo usuário -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --red-900: #7f1d1d;
+            --red-800: #991b1b;
+            --red-700: #b91c1c;
+            --red-600: #dc2626;
+            --red-500: #ef4444;
+            --blue-600: #2563eb;
+            --blue-700: #1d4ed8;
+            --green-600: #059669;
+            --green-500: #10b981;
+            --yellow-500: #eab308;
+            --yellow-400: #facc15;
+            --purple-600: #9333ea;
+            --orange-600: #ea580c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--gray-900);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--red-600);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--red-700);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: var(--blue-600);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--blue-700);
+        }
+
+        .btn-urgent {
+            background-color: var(--yellow-500);
+            color: black;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-urgent:hover {
+            background-color: var(--yellow-400);
+            transform: scale(1.05);
+        }
+
+        .btn-final {
+            background-color: var(--green-600);
+            color: white;
+            font-weight: 700;
+        }
+
+        .btn-final:hover {
+            background-color: var(--green-500);
+            transform: scale(1.05);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .badge-red {
+            background-color: var(--red-600);
+            color: white;
+        }
+
+        .badge-yellow {
+            background-color: rgba(234, 179, 8, 0.2);
+            color: var(--yellow-400);
+        }
+
+        .card {
+            background-color: var(--gray-800);
+            border: 1px solid var(--gray-700);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: rgba(55, 65, 81, 0.5);
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .bg-dark {
+            background-color: var(--gray-900);
+        }
+
+        .bg-gray-800 {
+            background-color: var(--gray-800);
+        }
+
+        .bg-red-gradient {
+            background: linear-gradient(to right, var(--red-900), var(--red-800));
+        }
+
+        .bg-gradient-dark {
+            background: linear-gradient(to bottom, var(--gray-900), var(--gray-800), var(--gray-900));
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-gray-300 {
+            color: var(--gray-300);
+        }
+
+        .text-gray-400 {
+            color: var(--gray-400);
+        }
+
+        .text-red-500 {
+            color: var(--red-500);
+        }
+
+        .text-green-400 {
+            color: var(--green-500);
+        }
+
+        .text-yellow-300 {
+            color: var(--yellow-400);
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .space-x-4 > * + * {
+            margin-left: 1rem;
+        }
+
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        .space-y-8 > * + * {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .mt-12 {
+            margin-top: 3rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .py-6 {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .z-10 {
+            z-index: 10;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .shadow-xl {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .shadow-2xl {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+
+        .opacity-20 {
+            opacity: 0.2;
+        }
+
+        .opacity-80 {
+            opacity: 0.8;
+        }
+
+        .bg-black-40 {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .bg-black-50 {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .bg-black-70 {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .bg-gray-800-50 {
+            background-color: rgba(31, 41, 55, 0.5);
+        }
+
+        .bg-gray-900-50 {
+            background-color: rgba(17, 24, 39, 0.5);
+        }
+
+        .bg-red-600-20 {
+            background-color: rgba(220, 38, 38, 0.2);
+        }
+
+        .bg-green-600-20 {
+            background-color: rgba(5, 150, 105, 0.2);
+        }
+
+        .bg-blue-600-20 {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .bg-purple-600-20 {
+            background-color: rgba(147, 51, 234, 0.2);
+        }
+
+        .bg-orange-600-20 {
+            background-color: rgba(234, 88, 12, 0.2);
+        }
+
+        .bg-yellow-600-20 {
+            background-color: rgba(234, 179, 8, 0.2);
+        }
+
+        .leading-tight {
+            line-height: 1.25;
+        }
+
+        .leading-relaxed {
+            line-height: 1.625;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-base {
+            font-size: 1rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+        }
+
+        .text-6xl {
+            font-size: 3.75rem;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .max-w-4xl {
+            max-width: 56rem;
+        }
+
+        .max-w-6xl {
+            max-width: 72rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .w-4 {
+            width: 1rem;
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .w-6 {
+            width: 1.5rem;
+        }
+
+        .w-8 {
+            width: 2rem;
+        }
+
+        .w-10 {
+            width: 2.5rem;
+        }
+
+        .w-16 {
+            width: 4rem;
+        }
+
+        .w-20 {
+            width: 5rem;
+        }
+
+        .h-4 {
+            height: 1rem;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .h-6 {
+            height: 1.5rem;
+        }
+
+        .h-8 {
+            height: 2rem;
+        }
+
+        .h-10 {
+            height: 2.5rem;
+        }
+
+        .h-16 {
+            height: 4rem;
+        }
+
+        .h-20 {
+            height: 5rem;
+        }
+
+        .h-48 {
+            height: 12rem;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .transition-colors {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+
+        .group:hover .group-hover\:bg-black-90 {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+
+        .hover\:bg-red-700:hover {
+            background-color: var(--red-700);
+        }
+
+        .hover\:bg-blue-700:hover {
+            background-color: var(--blue-700);
+        }
+
+        .hover\:bg-yellow-600:hover {
+            background-color: var(--yellow-500);
+        }
+
+        .hover\:bg-green-700:hover {
+            background-color: var(--green-500);
+        }
+
+        .hover\:text-gray-300:hover {
+            color: var(--gray-300);
+        }
+
+        .line-through {
+            text-decoration: line-through;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .overflow-x-hidden {
+            overflow-x: hidden;
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .bottom-4 {
+            bottom: 1rem;
+        }
+
+        .bottom-6 {
+            bottom: 1.5rem;
+        }
+
+        .right-4 {
+            right: 1rem;
+        }
+
+        .right-6 {
+            right: 1.5rem;
+        }
+
+        .border-t {
+            border-top: 1px solid;
+        }
+
+        .border-gray-800 {
+            border-color: var(--gray-800);
+        }
+
+        .bg-cover {
+            background-size: cover;
+        }
+
+        .bg-center {
+            background-position: center;
+        }
+
+        .bg-no-repeat {
+            background-repeat: no-repeat;
+        }
+
+        .bg-gradient-to-b {
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+
+        .from-gray-900 {
+            --tw-gradient-from: var(--gray-900);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(17, 24, 39, 0));
+        }
+
+        .from-gray-800 {
+            --tw-gradient-from: var(--gray-800);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(31, 41, 55, 0));
+        }
+
+        .from-gray-900-50 {
+            --tw-gradient-from: rgba(17, 24, 39, 0.5);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(17, 24, 39, 0));
+        }
+
+        .from-black-50 {
+            --tw-gradient-from: rgba(0, 0, 0, 0.5);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
+        }
+
+        .from-gray-800-50 {
+            --tw-gradient-from: rgba(31, 41, 55, 0.5);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(31, 41, 55, 0));
+        }
+
+        .via-gray-800 {
+            --tw-gradient-via: var(--gray-800);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, rgba(31, 41, 55, 0));
+        }
+
+        .to-gray-900 {
+            --tw-gradient-to: var(--gray-900);
+        }
+
+        .to-transparent {
+            --tw-gradient-to: transparent;
+        }
+
+        .to-black-50 {
+            --tw-gradient-to: rgba(0, 0, 0, 0.5);
+        }
+
+        .fill-current {
+            fill: currentColor;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--gray-900);
+            border: 1px solid var(--gray-700);
+            border-radius: 0.5rem;
+            max-width: 56rem;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-800);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-600);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (min-width: 640px) {
+            .sm\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            
+            .sm\:py-4 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            .sm\:text-lg {
+                font-size: 1.125rem;
+            }
+            
+            .sm\:text-xl {
+                font-size: 1.25rem;
+            }
+            
+            .sm\:text-4xl {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+            
+            .md\:px-0 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .md\:text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .md\:text-4xl {
+                font-size: 2.25rem;
+            }
+            
+            .md\:text-5xl {
+                font-size: 3rem;
+            }
+            
+            .md\:text-6xl {
+                font-size: 3.75rem;
+            }
+            
+            .md\:gap-12 {
+                gap: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            
+            .lg\:text-6xl {
+                font-size: 3.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- TODO: Colar o conteúdo completo do HTML fornecido pelo usuário aqui -->
+    <!-- Hero Section -->
+    <section class="section relative min-h-screen flex items-center justify-center bg-gradient-dark">
+        <div class="absolute inset-0 bg-black-40"></div>
+        <div 
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style="background-image: url('https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5')"
+        ></div>
+        
+        <div class="container relative z-10 text-center">
+            <div class="badge badge-red mb-4">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                Assista antes que tirem do ar
+            </div>
+
+            <!-- Video Placeholder -->
+            <div class="relative max-w-4xl mx-auto mb-8">
+                <div class="aspect-video bg-black rounded-lg border-2 border-gray-700 flex items-center justify-center relative group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-800-50 to-black-50 rounded-lg"></div>
+                    <div class="relative z-10 text-center">
+                        <svg class="w-16 h-16 text-white mb-4 mx-auto opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-gray-300">Vídeo VSL - Placeholder</p>
+                        <p class="text-sm text-gray-400 mt-2">Substitua pelo seu vídeo real</p>
+                    </div>
+                    <button id="muteBtn" class="absolute bottom-4 right-4 bg-black-70 p-2 rounded-full hover:bg-black-90 transition-colors">
+                        <svg id="muteIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+                O Poder Oculto da <span class="text-red-500">Manipulação</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto px-4">
+                O que políticos, mídias e corporações não querem que você descubra
+            </p>
+            
+            <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-3xl mx-auto px-4">
+                Aprenda a identificar mentiras, desmontar narrativas e proteger sua mente 
+                do controle psicológico da informação.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="flex items-center bg-gray-800-50 px-4 py-2 rounded-full">
+                    <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span class="text-sm">Segurança</span>
+                </div>
+                <div class="flex items-center bg-gray-800-50 px-4 py-2 rounded-full">
+                    <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-sm">Urgência</span>
+                </div>
+                <div class="flex items-center bg-gray-800-50 px-4 py-2 rounded-full">
+                    <svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <span class="text-sm">Conhecimento</span>
+                </div>
+            </div>
+
+            <button 
+                onclick="handlePurchase()"
+                class="btn btn-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg mx-4"
+            >
+                Quero descobrir a verdade agora
+            </button>
+        </div>
+    </section>
+
+    <!-- A História Real -->
+    <section class="section bg-gray-800 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900-50 to-transparent"></div>
+        <div class="container relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="px-4 md:px-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">A História Real</h2>
+                    <div class="space-y-6 text-gray-300">
+                        <p class="text-lg leading-relaxed">
+                            Maria era como você: acreditava no que via nas redes sociais, 
+                            confiava nas manchetes dos jornais e se deixava levar pelas 
+                            emoções das notícias.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Até que uma fake news destruiu a reputação de um candidato 
+                            em quem ela acreditava. Foi então que Maria descobriu como 
+                            estava sendo manipulada há anos.
+                        </p>
+                        <p class="text-lg leading-relaxed font-semibold text-white">
+                            Hoje, Maria é símbolo da verdade em sua comunidade. 
+                            Ela aprendeu a enxergar além das aparências.
+                        </p>
+                    </div>
+                    <button 
+                        onclick="handlePurchase()"
+                        class="btn btn-secondary mt-8 px-6 py-3"
+                    >
+                        Você também pode virar o jogo — descubra como
+                    </button>
+                </div>
+                <div class="relative">
+                    <img 
+                        src="https://images.unsplash.com/photo-1575305331117-0580726a1d34"
+                        alt="Pessoa analisando informações" 
+                        class="rounded-lg shadow-2xl w-full"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black-50 to-transparent rounded-lg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Dentro do eBook -->
+    <section class="section bg-dark">
+        <div class="container">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 px-4">Por Dentro do eBook</h2>
+            <p class="text-lg md:text-xl text-gray-400 text-center mb-12 px-4">
+                11 capítulos que vão transformar sua visão sobre política e mídia
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="chaptersContainer">
+                <!-- Chapters will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- O Que Você Vai Aprender -->
+    <section class="section bg-gray-800 relative">
+        <div 
+            class="absolute inset-0 opacity-10 bg-cover bg-center"
+            style="background-image: url('https://images.unsplash.com/photo-1638770749564-97535bf0d552')"
+        ></div>
+        <div class="container relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-12">O Que Você Vai Aprender</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8" id="benefitsContainer">
+                <!-- Benefits will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Provas e Histórias Reais -->
+    <section class="section bg-dark">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-12">Provas e Histórias Reais</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="card">
+                    <div class="card-content">
+                        <img 
+                            src="https://images.unsplash.com/photo-1626148749358-5b3b3f45b41a"
+                            alt="Investigação" 
+                            class="w-full h-48 object-cover rounded-lg mb-6"
+                        />
+                        <h3 class="text-2xl font-bold mb-4 text-white">
+                            Maria desmascarou um esquema e virou referência no bairro
+                        </h3>
+                        <blockquote class="text-gray-300 italic mb-4">
+                            "Esse livro abriu meus olhos — agora vejo o que antes passava despercebido."
+                        </blockquote>
+                        <p class="text-sm text-gray-500">— Carlos, leitor</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <img 
+                            src="https://images.unsplash.com/photo-1593510987185-1ec2256148a3"
+                            alt="Controle de narrativa" 
+                            class="w-full h-48 object-cover rounded-lg mb-6"
+                        />
+                        <h3 class="text-2xl font-bold mb-4 text-white">
+                            Uma fake news derrubou um candidato — mas a verdade venceu
+                        </h3>
+                        <blockquote class="text-gray-300 italic mb-4">
+                            "Finalmente entendi como funciona a manipulação da informação. Agora sou eu quem controlo o que acredito."
+                        </blockquote>
+                        <p class="text-sm text-gray-500">— Ana, professora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Que Este eBook É Diferente -->
+    <section class="section bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-12">Por Que Este eBook É Diferente</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="differentiatorsContainer">
+                <!-- Differentiators will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="badge badge-yellow px-6 py-2 text-lg">
+                    Aprovado e usado por cidadãos, professores e analistas que buscam a verdade
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Especial Limitada -->
+    <section class="section bg-red-gradient">
+        <div class="container max-w-4xl text-center">
+            <h2 class="text-4xl font-bold mb-8">Oferta Especial Limitada</h2>
+            
+            <div class="bg-black-50 rounded-lg p-8 mb-8 backdrop-blur-sm">
+                <p class="text-2xl mb-4">Oferta expira em:</p>
+                <div class="flex justify-center space-x-4 text-4xl font-mono font-bold">
+                    <div class="bg-black-50 px-4 py-2 rounded" id="countdown-hours">
+                        23
+                    </div>
+                    <span>:</span>
+                    <div class="bg-black-50 px-4 py-2 rounded" id="countdown-minutes">
+                        59
+                    </div>
+                    <span>:</span>
+                    <div class="bg-black-50 px-4 py-2 rounded" id="countdown-seconds">
+                        59
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-3xl font-bold mb-2">
+                    Promoção de lançamento — apenas <span class="text-yellow-300">R$ 27</span> até hoje à meia-noite!
+                </p>
+                <p class="text-xl text-gray-300">
+                    Depois disso, o valor volta ao normal: <span class="line-through">R$ 79</span>
+                </p>
+            </div>
+            
+            <button 
+                onclick="handlePurchase()"
+                class="btn btn-urgent px-8 py-4 text-xl"
+            >
+                Quero aproveitar agora
+            </button>
+            
+            <div class="mt-8 space-y-2">
+                <p class="text-gray-300">Apenas <span id="copiesLeft">47</span> cópias restantes na promoção</p>
+                <p class="text-gray-300">Mais de <span id="downloadsCount">347</span> downloads nas últimas 24 horas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus Exclusivos -->
+    <section class="section bg-dark">
+        <div class="container">
+            <div class="text-center mb-12">
+                <svg class="w-16 h-16 text-yellow-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                </svg>
+                <h2 class="text-4xl font-bold mb-4">Bônus Exclusivos</h2>
+                <p class="text-xl text-gray-400">Ao comprar hoje, você recebe também:</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6" id="bonusesContainer">
+                <!-- Bonuses will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia e Segurança -->
+    <section class="section bg-gray-100 text-gray-900">
+        <div class="container max-w-4xl text-center">
+            <svg class="w-16 h-16 text-green-600 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <h2 class="text-3xl font-bold mb-6">Garantia e Segurança</h2>
+            
+            <div class="bg-white rounded-lg p-8 shadow-xl">
+                <div class="flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span class="text-xl font-semibold">Compra Segura Kiwify</span>
+                </div>
+                
+                <p class="text-lg mb-4">
+                    Compra 100% segura via Kiwify.
+                </p>
+                <p class="text-lg font-semibold">
+                    Garantia total de 7 dias — se você não aprender nada novo, 
+                    devolvemos seu investimento sem burocracia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada Final -->
+    <section class="section bg-dark relative">
+        <div 
+            class="absolute inset-0 bg-cover bg-center opacity-20"
+            style="background-image: url('https://images.unsplash.com/photo-1546375570-2ae6a397bbcd')"
+        ></div>
+        <div class="container max-w-4xl text-center relative z-10">
+            <h2 class="text-5xl font-bold mb-8 leading-tight">
+                Você vai continuar sendo <span class="text-red-500">manipulado</span> — 
+                ou vai aprender a <span class="text-green-400">enxergar o jogo</span>?
+            </h2>
+            
+            <p class="text-2xl text-gray-300 mb-12">
+                A verdade está a um clique de distância.
+            </p>
+            
+            <button 
+                onclick="handlePurchase()"
+                class="btn btn-final px-12 py-6 text-2xl"
+            >
+                Quero descobrir o poder oculto agora
+            </button>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button
+        onclick="scrollToTop()"
+        class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+        aria-label="Voltar ao topo"
+    >
+        <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-gray-400 mb-4">
+                    © 2025 — O Poder Oculto da Manipulação
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+                    <button 
+                        onclick="openTermsModal()"
+                        class="hover:text-gray-300 transition-colors"
+                    >
+                        Política de Privacidade
+                    </button>
+                    <a href="mailto:suporte@example.com" class="hover:text-gray-300 transition-colors">
+                        Suporte
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    Compra Segura
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    Informação é Poder
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    Feito para o cidadão consciente
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 pt-8 border-t border-gray-800">
+                <div class="flex justify-center items-center space-x-2 text-yellow-400">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                </div>
+                <p class="text-gray-500 text-sm mt-2">
+                    Produto com garantia de satisfação ou seu dinheiro de volta
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Política de Privacidade</h3>
+            </div>
+            
+            <div class="modal-body">
+                <div class="space-y-6 text-gray-300">
+                    <section>
+                        <h4 class="text-lg font-semibold text-white mb-2">1. Informações que Coletamos</h4>
+                        <p>
+                            Coletamos apenas as informações necessárias para processar sua compra e entregar o eBook. 
+                            Isso inclui nome, email e informações de pagamento processadas de forma segura pela Kiwify.
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h4 class="text-lg font-semibold text-white mb-2">2. Como Usamos suas Informações</h4>
+                        <p>
+                            Suas informações são utilizadas exclusivamente para:
+                        </p>
+                        <ul class="list-disc ml-6 mt-2 space-y-1">
+                            <li>Processar sua compra e entregar o produto</li>
+                            <li>Enviar informações importantes sobre seu pedido</li>
+                            <li>Fornecer suporte ao cliente quando necessário</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h4 class="text-lg font-semibold text-white mb-2">3. Proteção de Dados</h4>
+                        <p>
+                            Todos os dados são protegidos com criptografia SSL e processados através da plataforma 
+                            segura da Kiwify, que atende aos mais altos padrões de segurança.
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h4 class="text-lg font-semibold text-white mb-2">4. Garantia de 7 Dias</h4>
+                        <p>
+                            Oferecemos garantia incondicional de 7 dias. Se não ficar satisfeito com o conteúdo, 
+                            basta solicitar o reembolso através do suporte da Kiwify.
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h4 class="text-lg font-semibold text-white mb-2">5. Contato</h4>
+                        <p>
+                            Para dúvidas sobre esta política ou suporte ao produto, entre em contato através 
+                            da plataforma Kiwify ou pelos canais de suporte disponibilizados após a compra.
+                        </p>
+                    </section>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button onclick="closeTermsModal()" class="btn btn-primary">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data
+        const chapters = [
+            { title: "Introdução – A urgência de entender política", icon: "target" },
+            { title: "Introdução Emocional – A verdade que ninguém te ensinou", icon: "brain" },
+            { title: "Como funciona o sistema político brasileiro", icon: "users" },
+            { title: "Mídia, narrativa e manipulação", icon: "eye" },
+            { title: "Desinformação e fake news", icon: "shield" },
+            { title: "Ferramentas de fiscalização cidadã", icon: "file-text" },
+            { title: "Como exercer o papel de cidadão", icon: "check-circle" },
+            { title: "Checklist de ação imediata", icon: "target" },
+            { title: "Estudos de caso inspiradores", icon: "users" },
+            { title: "Recursos e fontes confiáveis", icon: "lock" },
+            { title: "Conclusão – O despertar do cidadão esperto", icon: "brain" }
+        ];
+
+        const benefits = [
+            "Como a mídia molda suas opiniões sem você perceber",
+            "As 5 técnicas de manipulação usadas por políticos e corporações", 
+            "Como fiscalizar o dinheiro público e descobrir para onde ele vai",
+            "Como agir com poder, informação e estratégia",
+            "Como se proteger da desinformação e recuperar o controle da sua mente"
+        ];
+
+        const differentiators = [
+            {
+                title: "Sem ideologia partidária",
+                description: "Foco na verdade, não em partidos",
+                icon: "check-circle",
+                color: "green"
+            },
+            {
+                title: "Baseado em fatos", 
+                description: "Fontes oficiais e verificadas",
+                icon: "file-text",
+                color: "blue"
+            },
+            {
+                title: "Linguagem simples",
+                description: "Direto ao ponto, sem enrolação", 
+                icon: "brain",
+                color: "purple"
+            },
+            {
+                title: "Ferramentas práticas",
+                description: "Checklists prontos para usar",
+                icon: "target", 
+                color: "orange"
+            }
+        ];
+
+        const bonuses = [
+            "Checklist '5 passos para checar uma notícia em minutos'",
+            "Modelo de mensagem para cobrar representantes públicos",
+            "Guia rápido 'Fiscalização Cidadã Simplificada'",
+            "Mini-guia 'Como identificar narrativas manipuladas na mídia'"
+        ];
+
+        // Icon mapping
+        const icons = {
+            "target": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`,
+            "brain": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>`,
+            "users": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg>`,
+            "eye": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>`,
+            "shield": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`,
+            "file-text": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
+            "check-circle": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+            "lock": `<svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`
+        };
+
+        const differentiatorIcons = {
+            "check-circle": `<svg class="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+            "file-text": `<svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
+            "brain": `<svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>`,
+            "target": `<svg class="w-10 h-10 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderChapters();
+            renderBenefits();
+            renderDifferentiators();
+            renderBonuses();
+            startCountdown();
+            setupMuteButton();
+        });
+
+        // Render chapters
+        function renderChapters() {
+            const container = document.getElementById('chaptersContainer');
+            let html = '';
+            
+            chapters.forEach((chapter, index) => {
+                html += `
+                    <div class="card cursor-pointer">
+                        <div class="card-content">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-red-600-20 p-3 rounded-lg">
+                                    ${icons[chapter.icon]}
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-red-400 font-semibold mb-2">
+                                        Capítulo ${index + 1}
+                                    </div>
+                                    <h3 class="font-semibold text-white leading-tight">
+                                        ${chapter.title}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Render benefits
+        function renderBenefits() {
+            const container = document.getElementById('benefitsContainer');
+            let html = '';
+            
+            benefits.forEach(benefit => {
+                html += `
+                    <div class="flex items-start space-x-4 bg-gray-900-50 p-6 rounded-lg backdrop-blur-sm">
+                        <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-lg text-gray-200">${benefit}</p>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Render differentiators
+        function renderDifferentiators() {
+            const container = document.getElementById('differentiatorsContainer');
+            let html = '';
+            
+            differentiators.forEach(diff => {
+                html += `
+                    <div class="text-center">
+                        <div class="bg-${diff.color}-600-20 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                            ${differentiatorIcons[diff.icon]}
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">${diff.title}</h3>
+                        <p class="text-gray-400">${diff.description}</p>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Render bonuses
+        function renderBonuses() {
+            const container = document.getElementById('bonusesContainer');
+            let html = '';
+            
+            bonuses.forEach(bonus => {
+                html += `
+                    <div class="flex items-center space-x-4 bg-gray-800 p-6 rounded-lg">
+                        <svg class="w-8 h-8 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                        <p class="text-lg">${bonus}</p>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Countdown timer
+        function startCountdown() {
+            // Initialize countdown based on current time to ensure it resets daily
+            function initializeCountdown() {
+                const now = new Date();
+                const nextMidnight = new Date();
+                nextMidnight.setDate(now.getDate() + 1);
+                nextMidnight.setHours(0, 0, 0, 0);
+                
+                const timeRemaining = nextMidnight - now;
+                const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                
+                return { hours, minutes, seconds };
+            }
+
+            // Set initial time
+            let timeLeft = initializeCountdown();
+            updateCountdownDisplay(timeLeft);
+
+            const timer = setInterval(() => {
+                let newSeconds = timeLeft.seconds - 1;
+                let newMinutes = timeLeft.minutes;
+                let newHours = timeLeft.hours;
+
+                if (newSeconds < 0) {
+                    newSeconds = 59;
+                    newMinutes -= 1;
+                }
+                
+                if (newMinutes < 0) {
+                    newMinutes = 59;
+                    newHours -= 1;
+                }
+                
+                if (newHours < 0) {
+                    // Reset to next 24 hours when timer expires
+                    timeLeft = initializeCountdown();
+                } else {
+                    timeLeft = { hours: newHours, minutes: newMinutes, seconds: newSeconds };
+                }
+
+                updateCountdownDisplay(timeLeft);
+            }, 1000);
+        }
+
+        function updateCountdownDisplay(timeLeft) {
+            document.getElementById('countdown-hours').textContent = String(timeLeft.hours).padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = String(timeLeft.minutes).padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = String(timeLeft.seconds).padStart(2, '0');
+        }
+
+        // Mute button functionality
+        function setupMuteButton() {
+            const muteBtn = document.getElementById('muteBtn');
+            const muteIcon = document.getElementById('muteIcon');
+            let isMuted = true;
+
+            muteBtn.addEventListener('click', function() {
+                isMuted = !isMuted;
+                
+                if (isMuted) {
+                    muteIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>`;
+                } else {
+                    muteIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6a9 9 0 010 12m-4.5-9.5L19 19"></path>`;
+                }
+            });
+        }
+
+        // Purchase function
+        function handlePurchase() {
+            window.open('https://pay.kiwify.com.br/raLpvrK', '_blank');
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Modal functions
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.add('active');
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('termsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTermsModal();
+            }
+        });
+    </script>
 </body>
 </html>
