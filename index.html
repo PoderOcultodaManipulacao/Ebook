@@ -963,22 +963,21 @@
                 Assista antes que tirem do ar
             </div>
 
-            <!-- Video VSL -->
+   <!-- Video VSL - Controle Total -->
 <div class="video-container mb-8">
     <div class="relative">
-        <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/FoXJkfGQk4w?si=5wJC08Crlzb1usz_" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
+        <video 
             class="video-player aspect-video"
-        ></iframe>
+            controls
+            controlsList="nodownload nofullscreen noremoteplayback"
+            disablePictureInPicture
+            disableRemotePlayback
+            oncontextmenu="return false;"
+        >
+            <source src="Armazenamento/Download/VID-2025801-WA0084.MP4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
         <div class="video-overlay"></div>
-        <!-- Remove o botão de tela cheia personalizado pois o YouTube já tem -->
     </div>
 </div>
 
