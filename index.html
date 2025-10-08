@@ -971,20 +971,34 @@
       Seu navegador não suporta o formato de vídeo.
     </video>
 
-    <button onclick="togglePlay()" style="position:absolute;bottom:20px;left:20px;padding:10px 20px;background:#000;color:#fff;border:none;border-radius:8px;opacity:0.8;cursor:pointer;">
+    <button id="pauseBtn" onclick="togglePlay()" style="position:absolute;bottom:20px;left:20px;padding:10px 20px;background:#000;color:#fff;border:none;border-radius:8px;opacity:0.8;cursor:pointer;">
       Pausar
+    </button>
+
+    <button id="soundBtn" onclick="ativarSom()" style="position:absolute;bottom:20px;right:20px;padding:10px 20px;background:#000;color:#fff;border:none;border-radius:8px;opacity:0.8;cursor:pointer;">
+      🔊 Ativar som
     </button>
   </div>
 </div>
 
 <script>
   const video = document.getElementById('meuVideo');
+  const soundBtn = document.getElementById('soundBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+
   function togglePlay() {
     if (video.paused) {
       video.play();
+      pauseBtn.textContent = 'Pausar';
     } else {
       video.pause();
+      pauseBtn.textContent = 'Reproduzir';
     }
+  }
+
+  function ativarSom() {
+    video.muted = false;
+    soundBtn.style.display = 'none';
   }
 </script>
 
