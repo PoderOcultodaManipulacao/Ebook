@@ -953,7 +953,9 @@
             class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             style="background-image: url('https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5')"
         ></div>
-        
+
+
+      
         <div class="container relative z-10 text-center">
             <div class="badge badge-red mb-4">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -963,23 +965,61 @@
                 Assista antes que tirem do ar
             </div>
 
-           <!-- 
-    CÓDIGO CORRIGIDO (USAR ESTE)
-    Este é o novo código com o vídeo do YouTube e controles restritos.
--->
-<div class="video-container mb-8">
+           <div class="video-container mb-8">
     <div class="relative">
-        <iframe
-            class="video-player"
-            src="https://drive.google.com/file/d/1PZ6RC5ouvoT8SSviTDE11wmnixDdP_7P/view?usp=drive_link"
-            style="width: 100%; height: 400px; border-radius: 8px;"
-            frameborder="0"
-            allow="accelerometer; encrypted-media;"
-            allowfullscreen>
-        </iframe>
+        <!-- Remova o atributo 'controls' para esconder a barra de controle -->
+        <video 
+            class="video-player aspect-video"
+            id="meuVSL"
+            autoplay
+            muted
+            style="width: 100%; height: auto;"
+            onended="redirecionar()"
+        >
+            <source src="https://www.youtube.com/embed/FoXJkfGQk4w?si=jCMcIGoyUjszYzQ3&amp;controls=0" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
         <div class="video-overlay"></div>
     </div>
 </div>
+
+<script>
+// Encontra o vídeo na página pelo ID
+var video = document.getElementById('meuVSL');
+
+// Tenta iniciar o vídeo automaticamente
+var promessa = video.play();
+
+// Se o navegador bloquear o autoplay, ele tentará ligar o som quando o usuário interagir com a página
+if (promessa !== undefined) {
+    promessa.then(function() {
+        // Autoplay funcionou!
+    }).catch(function(error) {
+        // Autoplay falhou. O vídeo será tocado, mas mudo.
+        // O som pode ser ativado por um clique do usuário.
+        document.addEventListener('click', ativarSom);
+    });
+}
+
+function ativarSom() {
+    video.muted = false; // Tira o mudo
+    document.removeEventListener('click', ativarSom); // Remove o ouvinte de evento após o primeiro clique
+}
+
+// Função opcional para quando o vídeo terminar
+function redirecionar() {
+    // Aqui você pode colocar o que acontece ao fim do vídeo
+    // Por exemplo: window.location.href = "https://meusite.com/obrigado";
+    console.log("VSL finalizada!");
+}
+
+// Bloqueia qualquer tentativa de pausar o vídeo usando o teclado
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode === 32) { // Barra de espaço
+        e.preventDefault();
+    }
+});
+</script>
 
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
                 O Poder Oculto da <span class="text-red-500">Manipulação</span>
