@@ -948,6 +948,25 @@ video::-webkit-media-controls-panel {
                 font-size: 3.75rem;
             }
         }
+
+        /* Remove controles específicos do vídeo - OPÇÕES AVANÇADAS */
+
+/* Opção A: Remove apenas tela cheia e download */
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+/* Opção B: Remove mais controles (descomente se quiser) */
+/*
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-volume-slider {
+    display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+    justify-content: center !important;
+}
+*/
     </style>
 </head>
 <body>
