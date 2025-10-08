@@ -968,19 +968,22 @@ video::-webkit-media-controls-panel {
                 Assista antes que tirem do ar
             </div>
 
-   <!-- Video VSL - Controles Mínimos -->
+   <!-- Video VSL -->
 <div class="video-container mb-8">
     <div class="relative">
-        <iframe 
-            src="https://www.youtube.com/embed/FoXJkfGQk4w?controls=0&modestbranding=1&rel=0&disablekb=1" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
+        <video 
             class="video-player aspect-video"
-        ></iframe>
+            controls
+            controlsList="nodownload nofullscreen"
+            disablePictureInPicture
+            oncontextmenu="return false;"
+            poster="videos/thumbnail.jpg" <!-- Opcional: imagem de capa -->
+        >
+            <source src="videos/vsl-video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
         <div class="video-overlay"></div>
+        <!-- Remove os controles personalizados -->
     </div>
 </div>
 
