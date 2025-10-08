@@ -1,16 +1,1 @@
- <!-- Video VSL - Versão Corrigida -->
-<div class="video-container mb-8">
-    <div class="relative">
-        <video 
-            class="video-player aspect-video"
-            controls
-            controlsList="nodownload nofullscreen"
-            disablePictureInPicture
-            style="width: 100%; height: auto;"
-        >
-            <source src="https://github.com/Ebook-Baixe/Poderocultodamanipula-o/blob/e8a6228a7cea2d2269bc2576835536abf4f45009/vsl-video.mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-</div>
+
